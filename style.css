@@ -1,0 +1,177 @@
+/* ---------- Reset & base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Header ---------- */
+.header {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.info {
+  text-align: center;
+  margin: 0;
+  font-size: 40px;
+
+}
+
+.header h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  margin: 0;
+}
+
+/* ---------- Main game area ---------- */
+.game {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.choices {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 900px;
+}
+
+/* ---------- Buttons ---------- */
+.rock,
+.paper,
+.scissors {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.rock:hover,
+.paper:hover,
+.scissors:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.choices img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ---------- HUD (bottom bar) ---------- */
+.hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Score ---------- */
+.score {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-left: 100px;
+}
+
+.score p {
+  font-size: 1.5rem;
+  color: rgb(73, 71, 71);
+  margin: 0;
+}
+
+/* ---------- Reset button ---------- */
+.reset {
+  font-size: 1.5rem;
+  padding: 10px 50px;
+  background-color: black;
+  border-radius: 50px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-right: 70px;
+}
+
+.reset:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.player-move {
+  border: 10px solid rgb(70, 70, 255);
+}
+
+.cpu-move {
+  border: 10px solid rgb(80, 200, 80);
+}
+
+.tie-move {
+  border: 10px solid orange;
+}
+
+.legend {
+  background-color: rgba(255, 255, 255, 0.9);
+  /* Slight transparency */
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  /* Keeps it above other elements */
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.box {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+/* Match your game colors */
+.player {
+  background-color: rgb(70, 70, 255);
+}
+
+.cpu {
+  background-color: rgb(80, 200, 80);
+}
+
+.tie {
+  background-color: orange;
+}
+
+.tie-info{
+  color: orange;
+}
+
+.win-info{
+  color: rgb(0, 255, 0);
+}
+
+.lose-info{
+  color: red;
+}
