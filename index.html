@@ -14,13 +14,13 @@
 
     <main class="game">
       <div class="choices">
-        <button class="rock" onclick="playgame('rock')">
+        <button class="rock">
           <img src="images/rock-emoji.png" alt="Rock" />
         </button>
-        <button class="paper" onclick="playgame('paper')">
+        <button class="paper" >
           <img src="images/paper-emoji.png" alt="Paper" />
         </button>
-        <button class="scissors" onclick="playgame('scissors')">
+        <button class="scissors" >
           <img src="images/scissors-emoji.png" alt="Scissors" />
         </button>
       </div>
@@ -38,15 +38,11 @@
         <p id="ties">Ties: 0</p>
       </div>
 
-      <button
-        class="reset"
-        onclick="
-          resetScore();
-          displayScore();
-        "
-      >
-        Reset
-      </button>
+      <div class="buttons">
+      <button class="reset" onclick="autoPlayMain();">AutoPlay</button>
+      <button class="reset" onclick="resetScore();displayScore();"">Reset</button>
+      </div>
+
     </footer>
 
     <script src="script.js"></script>

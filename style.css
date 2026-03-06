@@ -175,3 +175,13 @@ body {
 .lose-info{
   color: red;
 }
+
+
+.buttons{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+
+
+}

@@ -61,6 +61,7 @@ function displayScore() {
   document.getElementById("ties").textContent = `Ties: ${score.ties}`;
 }
 
+
 function resetScore() {
   score = {
     wins: 0,
@@ -70,7 +71,11 @@ function resetScore() {
   localStorage.setItem("scoreboard", JSON.stringify(score));
   reset();
   document.querySelector(".info").innerHTML = "Hi again!";
+  stopAutoPlay(id);
 }
+
+
+
 
 function reset() {
   const choicesBorders = document.querySelectorAll(".choices button");
@@ -80,5 +85,48 @@ function reset() {
 
   const choicesInfo = document.querySelector('.info')
     choicesInfo.classList.remove("win-info", "lose-info", "tie-info");
+
+  }
+
+
+  let isAuto = false;
+let id;
+
+function autoPlayMain(){
+  if (!isAuto){
+  id = setInterval(autoPlay,1000)
+  isAuto=true;
+} else {
+  stopAutoPlay(id)
+}
 }
 
+function autoPlay(){
+  x = calculateComputerMove();
+  playgame(x);
+}
+
+
+function stopAutoPlay(id) {
+  isAuto = false;
+  clearInterval(id);
+}
+
+document.querySelector(".rock").addEventListener('click', () => playgame('rock'))
+document
+  .querySelector(".paper")
+  .addEventListener("click", () => playgame("paper"));
+  document
+    .querySelector(".scissors")
+    .addEventListener("click", () => playgame("scissors"));
+
+
+document.body.addEventListener('keypress', (event)=> {
+  if (event.key == 'r'){
+    playgame('rock')
+  } else if (event.key == 'p'){
+    playgame('paper')
+  } else if(event.key == 's' ){
+    playgame('scissors')
+  }
+})
